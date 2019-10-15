@@ -1,0 +1,55 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29409.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdLogger.Web.MVC", "BirdLogger.Web.MVC\BirdLogger.Web.MVC.csproj", "{7AA9C6FB-A356-4A98-A20B-11509FFACBF2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdLogger.Data", "BirdLogger.Data\BirdLogger.Data.csproj", "{E61EB732-B396-4B32-84AC-B9015F003E39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdLogger.Models", "BirdLogger.Models\BirdLogger.Models.csproj", "{0C8BCDED-B9F5-4D29-8F0C-94C1CEB04F36}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdLogger.Services", "BirdLogger.Services\BirdLogger.Services.csproj", "{5A1E62E7-A693-4172-A97A-05DE333D6ECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdLogger.Contracts", "BirdLogger.Contracts\BirdLogger.Contracts.csproj", "{1D2CF3FC-4A51-4111-9053-21B2FF349AD7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BirdLogger.Tests", "BirdLogger.Tests\BirdLogger.Tests.csproj", "{DCFBFD57-3BEB-4D37-8822-A18EA93C86FC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AA9C6FB-A356-4A98-A20B-11509FFACBF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7AA9C6FB-A356-4A98-A20B-11509FFACBF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7AA9C6FB-A356-4A98-A20B-11509FFACBF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7AA9C6FB-A356-4A98-A20B-11509FFACBF2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E61EB732-B396-4B32-84AC-B9015F003E39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E61EB732-B396-4B32-84AC-B9015F003E39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E61EB732-B396-4B32-84AC-B9015F003E39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E61EB732-B396-4B32-84AC-B9015F003E39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C8BCDED-B9F5-4D29-8F0C-94C1CEB04F36}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C8BCDED-B9F5-4D29-8F0C-94C1CEB04F36}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C8BCDED-B9F5-4D29-8F0C-94C1CEB04F36}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C8BCDED-B9F5-4D29-8F0C-94C1CEB04F36}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A1E62E7-A693-4172-A97A-05DE333D6ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A1E62E7-A693-4172-A97A-05DE333D6ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A1E62E7-A693-4172-A97A-05DE333D6ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A1E62E7-A693-4172-A97A-05DE333D6ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D2CF3FC-4A51-4111-9053-21B2FF349AD7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D2CF3FC-4A51-4111-9053-21B2FF349AD7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D2CF3FC-4A51-4111-9053-21B2FF349AD7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D2CF3FC-4A51-4111-9053-21B2FF349AD7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCFBFD57-3BEB-4D37-8822-A18EA93C86FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCFBFD57-3BEB-4D37-8822-A18EA93C86FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCFBFD57-3BEB-4D37-8822-A18EA93C86FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCFBFD57-3BEB-4D37-8822-A18EA93C86FC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AE0B7458-300D-4F18-9611-D7289537F580}
+	EndGlobalSection
+EndGlobal

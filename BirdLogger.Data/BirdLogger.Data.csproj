@@ -56,11 +56,28 @@
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Migrations\201910151930353_InitialCreate.cs" />
+    <Compile Include="Migrations\201910151930353_InitialCreate.Designer.cs">
+      <DependentUpon>201910151930353_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201910161624063_AddedLogger.cs" />
+    <Compile Include="Migrations\201910161624063_AddedLogger.Designer.cs">
+      <DependentUpon>201910161624063_AddedLogger.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201910151930353_InitialCreate.resx">
+      <DependentUpon>201910151930353_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201910161624063_AddedLogger.resx">
+      <DependentUpon>201910161624063_AddedLogger.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -22,11 +22,10 @@ namespace BirdLogger.Data
         [Required]
         public string Color { get; set; }
         [Required]
-        [Display(Name ="What is/are the bird(s) doing?")]
         public string Activity { get; set; }
         [Required]
-        public DateTimeOffset CreatedUtc { get; set; }
-        public DateTimeOffset? ModifiedUtc { get; set; }
+        public DateTime CreatedUtc { get; set; }
+        //public DateTimeOffset? ModifiedUtc { get; set; }
 
         
 

@@ -14,7 +14,7 @@ namespace BirdLogger.Web.MVC.Controllers
         public ActionResult Index()
         {
             var model = new LoggerListItem[0];
-            return View();
+            return View(model);
         }
     }
 }

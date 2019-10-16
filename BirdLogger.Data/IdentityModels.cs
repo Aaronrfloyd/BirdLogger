@@ -32,7 +32,7 @@ namespace BirdLogger.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet<Logger> Notes { get; set; }
+        public DbSet<Logger> Loggers { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LoggerService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BirdLogger.Data\BirdLogger.Data.csproj">
+      <Project>{e61eb732-b396-4b32-84ac-b9015f003e39}</Project>
+      <Name>BirdLogger.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BirdLogger.Models\BirdLogger.Models.csproj">
+      <Project>{0c8bcded-b9f5-4d29-8f0c-94c1ceb04f36}</Project>
+      <Name>BirdLogger.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

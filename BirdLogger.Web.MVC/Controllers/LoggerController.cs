@@ -1,4 +1,6 @@
 ﻿using BirdLogger.Models;
+using BirdLogger.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,10 @@ namespace BirdLogger.Web.MVC.Controllers
         // GET: Logger
         public ActionResult Index()
         {
-            var model = new LoggerListItem[0];
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new LoggerService(userId);
+            var model = service.GetLogger();
+            
             return View(model);
         }
 
@@ -27,11 +32,24 @@ namespace BirdLogger.Web.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(LoggerCreate model)
         {
-            if (ModelState.IsValid)
-            {
+            if (!ModelState.IsValid) return View(model);
+            
 
-            }
+            var service = CreateLoggerService();
+
+            if (service.CreateLogger(model))
+            { 
+              return RedirectToAction("Index");
+            };
+
             return View(model);
+        }
+
+        private LoggerService CreateLoggerService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new LoggerService(userId);
+            return service;
         }
     }
 }

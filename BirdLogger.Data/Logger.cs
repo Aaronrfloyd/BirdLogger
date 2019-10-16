@@ -12,7 +12,7 @@ namespace BirdLogger.Data
         [Key]
         public int LoggerID { get; set; }
         [Required]
-        public Guid OwnerID { get; set; }
+        public Guid OwnerId { get; set; }
         [Display(Name = "What type of Bird?")]
         public string Type { get; set; }
         [Required]

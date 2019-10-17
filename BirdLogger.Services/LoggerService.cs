@@ -55,8 +55,7 @@ namespace BirdLogger.Services
                                     Color = e.Color,
                                     Activity = e.Activity,
                                     CreatedUtc = e.CreatedUtc
-                                }
-                        );
+                                });
 
                 return query.ToArray();
             }
@@ -82,8 +81,22 @@ namespace BirdLogger.Services
                     ModifiedUtc = entity.ModifiedUtc
 
                 };
+            }
+        }
 
+        public bool UpdateLogger(LoggerEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Loggers.Single(e => e.LoggerId == model.LoggerId && e.OwnerId == _userId);
 
+                entity.Type = model.Type;
+                entity.Location = model.Location;
+                entity.Size = model.Size;
+                entity.Color = model.Color;
+                entity.Activity = model.Activity;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                return ctx.SaveChanges() == 1;
             }
         }
 

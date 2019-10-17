@@ -56,6 +56,22 @@ namespace BirdLogger.Web.MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Edit(int id)
+        {
+            var service = CreateLoggerService();
+            var detail = service.GetLoggerById(id);
+            var model = new LoggerEdit
+            {
+                LoggerId = detail.LoggerId,
+                Type = detail.Type,
+                Location = detail.Location,
+                Size = detail.Size,
+                Color = detail.Color,
+                Activity = detail.Activity,
+            };
+            return View(model);
+        }
+
         private LoggerService CreateLoggerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

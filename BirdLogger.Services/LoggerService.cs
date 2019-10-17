@@ -50,6 +50,10 @@ namespace BirdLogger.Services
                                     {
                                         LoggerId = e.LoggerID,
                                         Type = e.Type,
+                                        Location = e.Location,
+                                        Size = e.Size,
+                                        Color = e.Color,
+                                        Activity = e.Activity,
                                         CreatedUtc = e.CreatedUtc
                                     }
                             );

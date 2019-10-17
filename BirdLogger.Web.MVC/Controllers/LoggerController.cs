@@ -38,9 +38,12 @@ namespace BirdLogger.Web.MVC.Controllers
             var service = CreateLoggerService();
 
             if (service.CreateLogger(model))
-            { 
+            {
+              TempData["SaveResult"] = "Your note was created.";
               return RedirectToAction("Index");
             };
+
+            ModelState.AddModelError("", "Note could not be created.");
 
             return View(model);
         }

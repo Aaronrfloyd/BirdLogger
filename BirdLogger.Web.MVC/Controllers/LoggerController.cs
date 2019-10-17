@@ -72,6 +72,29 @@ namespace BirdLogger.Web.MVC.Controllers
             return View(model);
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, LoggerEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.LoggerId ! = id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateLoggerService();
+            if (service.UpdateLogger(model))
+            {
+                TempData["SaveResult"] = "Your log was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "your log could not be updated.");
+            return View(model);
+        }
+
         private LoggerService CreateLoggerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

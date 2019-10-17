@@ -38,29 +38,29 @@ namespace BirdLogger.Services
 
         public IEnumerable<LoggerListItem> GetLogger()
         {
-              using (var ctx = new ApplicationDbContext())
-              {
-                    var query =
-                        ctx
-                            .Loggers
-                            .Where(e => e.OwnerId == _userId)
-                            .Select(
-                                e =>
-                                    new LoggerListItem
-                                    {
-                                        LoggerId = e.LoggerId,
-                                        Type = e.Type,
-                                        Location = e.Location,
-                                        Size = e.Size,
-                                        Color = e.Color,
-                                        Activity = e.Activity,
-                                        CreatedUtc = e.CreatedUtc
-                                    }
-                            );
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Loggers
+                        .Where(e => e.OwnerId == _userId)
+                        .Select(
+                            e =>
+                                new LoggerListItem
+                                {
+                                    LoggerId = e.LoggerId,
+                                    Type = e.Type,
+                                    Location = e.Location,
+                                    Size = e.Size,
+                                    Color = e.Color,
+                                    Activity = e.Activity,
+                                    CreatedUtc = e.CreatedUtc
+                                }
+                        );
 
-                    return query.ToArray();
-              }
-        } 
+                return query.ToArray();
+            }
+        }
 
         public LoggerDetails GetLoggerById(int id)
         {
@@ -82,8 +82,8 @@ namespace BirdLogger.Services
                     ModifiedUtc = entity.ModifiedUtc
 
                 };
-                    
-                    
+
+
             }
         }
 

@@ -7,13 +7,13 @@ namespace BirdLogger.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class AddedLogger : IMigrationMetadata
+    public sealed partial class LoggerId : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedLogger));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(LoggerId));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910161624063_AddedLogger"; }
+            get { return "201910171511473_LoggerId"; }
         }
         
         string IMigrationMetadata.Source

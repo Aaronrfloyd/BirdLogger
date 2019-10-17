@@ -48,7 +48,7 @@ namespace BirdLogger.Services
                                 e =>
                                     new LoggerListItem
                                     {
-                                        LoggerId = e.LoggerID,
+                                        LoggerId = e.LoggerId,
                                         Type = e.Type,
                                         Location = e.Location,
                                         Size = e.Size,
@@ -61,5 +61,31 @@ namespace BirdLogger.Services
                     return query.ToArray();
               }
         } 
+
+        public LoggerDetails GetLoggerById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                                .Loggers
+                                .Single(e => e.LoggerId == id && e.OwnerId == _userId);
+
+                return new LoggerDetails
+                {
+                    LoggerId = entity.LoggerId,
+                    Type = entity.Type,
+                    Location = entity.Location,
+                    Size = entity.Size,
+                    Color = entity.Color,
+                    Activity = entity.Activity,
+                    CreatedUtc = entity.CreatedUtc,
+                    ModifiedUtc = entity.ModifiedUtc
+
+                };
+                    
+                    
+            }
+        }
+
     }
 }

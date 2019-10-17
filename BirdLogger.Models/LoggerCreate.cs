@@ -38,6 +38,6 @@ namespace BirdLogger.Models
         [Required]
         [Display(Name = "Date")]
         public DateTime CreatedUtc { get; set; }
-        //public DateTimeOffset? ModifiedUtc { get; set; }
+        public DateTimeOffset? ModifiedUtc { get; set; }
     }
 }

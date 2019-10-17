@@ -48,6 +48,14 @@ namespace BirdLogger.Web.MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateLoggerService();
+            var model = svc.GetLoggerById(id);
+
+            return View(model);
+        }
+
         private LoggerService CreateLoggerService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

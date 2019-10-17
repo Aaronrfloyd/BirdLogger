@@ -9,6 +9,7 @@ namespace BirdLogger.Models
     public class LoggerEdit
     {
         public int LoggerId { get; set; }
+        public Guid  OwnerId { get; set; }
         public string Type { get; set; }
         public string Location { get; set; }
         public string Size { get; set; }

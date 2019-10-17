@@ -49,6 +49,7 @@ namespace BirdLogger.Services
                                 new LoggerListItem
                                 {
                                     LoggerId = e.LoggerId,
+                                    OwnerID = e.OwnerId,
                                     Type = e.Type,
                                     Location = e.Location,
                                     Size = e.Size,
@@ -72,6 +73,7 @@ namespace BirdLogger.Services
                 return new LoggerDetails
                 {
                     LoggerId = entity.LoggerId,
+                    OwnerId = entity.OwnerId,
                     Type = entity.Type,
                     Location = entity.Location,
                     Size = entity.Size,
@@ -100,5 +102,16 @@ namespace BirdLogger.Services
             }
         }
 
+        public bool DeleteLogger(int loggerId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Loggers.Single(e => e.LoggerId == loggerId && e.OwnerId == _userId);
+
+                ctx.Loggers.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }

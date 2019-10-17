@@ -63,6 +63,7 @@ namespace BirdLogger.Web.MVC.Controllers
             var model = new LoggerEdit
             {
                 LoggerId = detail.LoggerId,
+                OwnerId = detail.OwnerId,
                 Type = detail.Type,
                 Location = detail.Location,
                 Size = detail.Size,
@@ -75,16 +76,17 @@ namespace BirdLogger.Web.MVC.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, LoggerEdit model)
-        {
+        {  
             if (!ModelState.IsValid) return View(model);
 
-            if (model.LoggerId ! = id)
+            if (model.LoggerId !=id)
             {
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
 
             var service = CreateLoggerService();
+
             if (service.UpdateLogger(model))
             {
                 TempData["SaveResult"] = "Your log was updated.";
@@ -93,6 +95,26 @@ namespace BirdLogger.Web.MVC.Controllers
 
             ModelState.AddModelError("", "your log could not be updated.");
             return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateLoggerService();
+            var model = svc.GetLoggerById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateLoggerService();
+            service.DeleteLogger(id);
+            TempData["SaveResult"] = "Your log was deleted.";
+            return RedirectToAction("Index");
         }
 
         private LoggerService CreateLoggerService()

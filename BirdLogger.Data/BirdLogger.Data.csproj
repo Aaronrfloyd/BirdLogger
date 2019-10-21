@@ -55,6 +55,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Journal.cs" />
     <Compile Include="Logger.cs" />
     <Compile Include="Migrations\201910171511473_LoggerId.cs" />
     <Compile Include="Migrations\201910171511473_LoggerId.Designer.cs">

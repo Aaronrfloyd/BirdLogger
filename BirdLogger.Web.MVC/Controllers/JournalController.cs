@@ -16,5 +16,22 @@ namespace BirdLogger.Web.MVC.Controllers
             var model = new JournalListItem[0];
             return View();
         }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(JournalCreate model)
+        {
+            if (ModelState.IsValid)
+            {
+
+            }
+            return View(model);
+
+        }
     }
 }

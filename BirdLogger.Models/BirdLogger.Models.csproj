@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="JournalCreate.cs" />
     <Compile Include="JournalListItem.cs" />
     <Compile Include="LoggerCreate.cs" />
     <Compile Include="LoggerDetails.cs" />

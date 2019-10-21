@@ -16,6 +16,7 @@ namespace BirdLogger.Models
         [MaxLength(8000)]
         [Display(Name ="Body")]
         public string Content { get; set; }
+        public int  LoggerId { get; set; }
 
     }
 }

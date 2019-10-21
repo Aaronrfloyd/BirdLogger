@@ -33,6 +33,7 @@ namespace BirdLogger.Data
         }
 
         public DbSet<Logger> Loggers { get; set; }
+        public DbSet<Journal> Journals { get; set; }
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
@@ -44,6 +45,7 @@ namespace BirdLogger.Data
                 .Add(new IdentityUserLoginConfiguration())
                 .Add(new IdentityUserRoleConfiguration());
         }
+
     }
 
        public class IdentityUserLoginConfiguration : EntityTypeConfiguration<IdentityUserLogin>

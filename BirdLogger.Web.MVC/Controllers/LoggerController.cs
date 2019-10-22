@@ -39,11 +39,11 @@ namespace BirdLogger.Web.MVC.Controllers
 
             if (service.CreateLogger(model))
             {
-              TempData["SaveResult"] = "Your note was created.";
+              TempData["SaveResult"] = "Your log was created.";
               return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Note could not be created.");
+            ModelState.AddModelError("", "Log could not be created.");
 
             return View(model);
         }

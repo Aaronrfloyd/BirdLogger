@@ -18,16 +18,14 @@ namespace BirdLogger.Services
 
         public bool CreateJournal(JournalCreate model)
         {
-            var entity =
-                new Journal()
-                {
+            var entity = new Journal()
+            {
                     OwnerId = _userId,
                     LoggerId =model.LoggerId,
                     Title = model.Title,
                     Content = model.Content,
                     CreatedUtc = DateTimeOffset.Now
-                };
-
+            };
             using (var ctx = new ApplicationDbContext())
             {
                 ctx.Journals.Add(entity);

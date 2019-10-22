@@ -16,6 +16,8 @@ namespace BirdLogger.Web.MVC.Controllers
         // GET: Journal
         public ActionResult Index()
         {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new JournalService(userId);
             var model = new JournalListItem[0];
             return View(model);
         }
@@ -29,21 +31,26 @@ namespace BirdLogger.Web.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(JournalCreate model)
         {
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateJournalService();
+
+            if (service.CreateJournal(model))
             {
-                return View(model);
-            }
+                TempData["SaveResult"] = "Your journal was created.";
+                return RedirectToAction("Index");
+            };
 
-            var userId = Guid.Parse(User.Identity.GetUserId());
-            var service = new JournalService(userId);
+            ModelState.AddModelError("", "Journal could not be created.");
 
-            service.CreateJournal(model);
-            
-            return RedirectToAction("Index");
-            
-            
+            return View(model);
         }
 
-       
+        private JournalService CreateJournalService()
+        {
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new JournalService(userId);
+            return service;
+        }
     }
 }

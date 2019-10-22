@@ -18,7 +18,7 @@ namespace BirdLogger.Web.MVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new JournalService(userId);
-            var model = new JournalListItem[0];
+            var model = service.GetJournals();
             return View(model);
         }
 

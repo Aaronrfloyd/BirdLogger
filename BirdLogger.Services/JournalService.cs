@@ -39,7 +39,7 @@ namespace BirdLogger.Services
             {
                 var query = ctx
                     .Journals
-                    .Where(e => e.LoggerId == e.JournalId)
+                    .Where(e => e.OwnerId == _userId)
                     .Select(
                     e =>
                        new JournalListItem

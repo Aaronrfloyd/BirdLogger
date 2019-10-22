@@ -52,6 +52,26 @@ namespace BirdLogger.Services
                 return query.ToArray();
             }
         }
+
+        public JournalDetail GetJournalById (int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                    .Journals
+                    .Single(e => e.JournalId == id && e.OwnerId == _userId);
+                return new JournalDetail
+                {
+                    JournalId = entity.JournalId,
+                    LoggerId = entity.LoggerId,
+                    OwnerId = entity.OwnerId,
+                    Title = entity.Title,
+                    Content = entity.Content,
+                    CreatedUtc = entity.CreatedUtc,
+                    ModifiedUtc = entity.ModifiedUtc,
+                };
+            }
+        }
     }
 }
 

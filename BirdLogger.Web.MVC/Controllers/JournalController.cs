@@ -46,6 +46,13 @@ namespace BirdLogger.Web.MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateJournalService();
+            var model = svc.GetJournalById(id);
+            return View(model);
+        }
+
         private JournalService CreateJournalService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

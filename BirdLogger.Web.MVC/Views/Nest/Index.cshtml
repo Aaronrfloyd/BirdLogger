@@ -28,9 +28,6 @@
             @Html.DisplayNameFor(model => model.LoggerId)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.JournalId)
-        </th>
-        <th>
             @Html.DisplayNameFor(model => model.OwnerId)
         </th>
         <th>
@@ -67,9 +64,6 @@
                 @Html.DisplayFor(modelItem => item.LoggerId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.JournalId)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.OwnerId)
             </td>
             <td>
@@ -94,9 +88,9 @@
                 @Html.DisplayFor(modelItem => item.ModifiedUtc)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @Html.ActionLink("Edit", "Edit", new {  id=item.NestId }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.NestId}) |
+                @Html.ActionLink("Delete", "Delete", new { id=item.NestId })
             </td>
         </tr>
     }

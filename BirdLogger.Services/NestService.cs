@@ -26,7 +26,6 @@ namespace BirdLogger.service
                     OwnerId = _userId,
                     NestId = model.NestId,
                     LoggerId = model.LoggerId,
-                    JournalId = model.JournalId,
                     Site = model.Site,
                     Materials = model.Materials,
                     Altitude = model.Altitude,
@@ -55,7 +54,6 @@ namespace BirdLogger.service
                                 {
                                     NestId = e.NestId,
                                     LoggerId = e.LoggerId,
-                                    JournalId = e.JournalId,
                                     Site = e.Site,
                                     Materials = e.Materials,
                                     Altitude = e.Altitude,
@@ -66,6 +64,58 @@ namespace BirdLogger.service
                         );
 
                 return query.ToArray();
+            }
+        }
+        public NestDetails GetNestById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                                .Nests
+                                .Single(e => e.NestId == id && e.OwnerId == _userId);
+
+                return new NestDetails
+                {
+                    NestId = entity.NestId,
+                    LoggerId = entity.LoggerId,
+                    Site = entity.Site,
+                    Materials = entity.Materials,
+                    Altitude = entity.Altitude,
+                    Eggs = entity.Eggs,
+                    Hatchlings = entity.Hatchlings,
+                    CreatedUtc = DateTimeOffset.Now
+
+                };
+            }
+        }
+
+        public bool UpdateNest(NestEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Nests.Single(e => e.NestId == model.NestId && e.OwnerId == _userId);
+
+                entity.NestId = model.NestId;
+                entity.LoggerId = model.LoggerId;
+                entity.Site = model.Site;
+                entity.Altitude = model.Altitude;
+                entity.Eggs = model.Eggs;
+                entity.Hatchlings = model.Hatchlings;
+                entity.CreatedUtc = DateTimeOffset.UtcNow;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteNest(int nestId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Nests.Single(e => e.NestId == nestId && e.OwnerId == _userId);
+
+                ctx.Nests.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

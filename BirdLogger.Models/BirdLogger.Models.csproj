@@ -63,6 +63,8 @@
     <Compile Include="LoggerEdit.cs" />
     <Compile Include="LoggerListItem.cs" />
     <Compile Include="NestCreate.cs" />
+    <Compile Include="NestDetail.cs" />
+    <Compile Include="NestEdit.cs" />
     <Compile Include="NestListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

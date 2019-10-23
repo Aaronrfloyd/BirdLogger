@@ -253,6 +253,8 @@
     <Content Include="Views\Shared\DisplayTemplates\View.cshtml" />
     <Content Include="Views\Nest\Index.cshtml" />
     <Content Include="Views\Nest\Create.cshtml" />
+    <Content Include="Views\Nest\Details.cshtml" />
+    <Content Include="Views\Nest\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

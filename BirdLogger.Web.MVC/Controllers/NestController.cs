@@ -47,6 +47,76 @@ namespace BirdLogger.Web.MVC.Controllers
             return View(model);
         }
 
+        public ActionResult Details(int id)
+        {
+            var svc = CreateNestService();
+            var model = svc.GetNestById(id);
+
+            return View(model);
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var service = CreateNestService();
+            var detail = service.GetNestById(id);
+            var model = new NestEdit
+            {
+                LoggerId = detail.LoggerId,
+                OwnerId = detail.OwnerId,
+                Site = detail.Site,
+                Materials = detail.Materials,
+                Altitude = detail.Altitude,
+                Eggs = detail.Eggs,
+                Hatchlings = detail.Hatchlings,
+                
+            };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, NestEdit model)
+        {
+            if (!ModelState.IsValid) return View(model);
+
+            if (model.NestId != id)
+            {
+                ModelState.AddModelError("", "Id Mismatch");
+                return View(model);
+            }
+
+            var service = CreateNestService();
+
+            if (service.UpdateNest(model))
+            {
+                TempData["SaveResult"] = "Your nest was updated.";
+                return RedirectToAction("Index");
+            }
+
+            ModelState.AddModelError("", "your nest could not be updated.");
+            return View(model);
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateNestService();
+            var model = svc.GetNestById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateNestService();
+            service.DeleteNest(id);
+            TempData["SaveResult"] = "Your nest was deleted.";
+            return RedirectToAction("Index");
+        }
+
         private NestService CreateNestService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());

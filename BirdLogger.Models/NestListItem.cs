@@ -11,7 +11,6 @@ namespace BirdLogger.Models
     {
         public int NestId { get; set; }
         public int LoggerId { get; set; }
-        public int JournalId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
         public string Site { get; set; }

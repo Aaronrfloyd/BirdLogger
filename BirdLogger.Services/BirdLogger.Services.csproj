@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="JournalService.cs" />
     <Compile Include="LoggerService.cs" />
+    <Compile Include="NestService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

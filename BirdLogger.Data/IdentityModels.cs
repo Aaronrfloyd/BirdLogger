@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System.Collections.Generic;
+using System.Data.Entity;
 using System.Data.Entity.ModelConfiguration;
 using System.Data.Entity.ModelConfiguration.Conventions;
 using System.Security.Claims;
@@ -34,6 +35,8 @@ namespace BirdLogger.Data
 
         public DbSet<Logger> Loggers { get; set; }
         public DbSet<Journal> Journals { get; set; }
+        public DbSet<Nest> Nests { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

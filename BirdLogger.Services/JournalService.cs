@@ -72,6 +72,38 @@ namespace BirdLogger.Services
                 };
             }
         }
+
+        public bool UpdateJournal(JournalEdit model)
+        {
+            using(var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx.Journals
+                    .Single(e => e.JournalId == model.JournalId && e.OwnerId == _userId);
+                entity.JournalId = model.JournalId;
+                entity.LoggerId = model.LoggerId;
+                entity.Title = model.Title;
+                entity.Content = model.Content;
+                entity.CreatedUtc = DateTimeOffset.UtcNow;
+
+                return ctx.SaveChanges() == 1;
+
+            }
+        }
+
+        public bool DeleteJournal(int journalId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Journals
+                        .Single(e => e.JournalId == journalId && e.OwnerId == _userId);
+
+                ctx.Journals.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
     }
 }
 

@@ -25,6 +25,9 @@
             @Html.DisplayNameFor(model => model.JournalId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.LoggerId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
@@ -35,22 +38,25 @@
 
     @foreach (var item in Model)
      {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.JournalId)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { /*id=item.PrimaryKey */  }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
-            </td>
-        </tr>
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.JournalId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.LoggerId)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.CreatedUtc)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.JournalId }) |
+        @Html.ActionLink("Details", "Details", new { id = item.JournalId }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.JournalId })
+    </td>
+</tr>
      }
 
 </table>

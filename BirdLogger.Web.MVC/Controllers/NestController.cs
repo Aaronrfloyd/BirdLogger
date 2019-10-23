@@ -31,18 +31,27 @@ namespace BirdLogger.Web.MVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(NestCreate model)
         {
-            if (ModelState.IsValid)
-            {
-             return View(model);
-            }
+            if (!ModelState.IsValid) return View(model);
+            
+            var service = CreateNestService();
 
+            if (service.CreateNest(model))
+            {
+                TempData["SaveResult"] = "Your nest was created.";
+                return RedirectToAction("Index");
+
+            };
+
+            ModelState.AddModelError("", "Nest could not be created.");
+
+            return View(model);
+        }
+
+        private NestService CreateNestService()
+        {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new NestService(userId);
-
-            service.CreateNest(model);
-
-            return RedirectToAction("Index");
-
+            return service;
         }
     }
 }

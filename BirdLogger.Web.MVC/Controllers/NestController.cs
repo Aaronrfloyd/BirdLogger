@@ -1,4 +1,6 @@
 ﻿using BirdLogger.Models;
+using BirdLogger.service;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,8 +15,11 @@ namespace BirdLogger.Web.MVC.Controllers
         // GET: Nest
         public ActionResult Index()
         {
-            var model = new NestListItem[0];
-            return View();
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new NestService(userId);
+            var model = service.GetNest();
+
+            return View(model);
         }
 
         public ActionResult Create()
@@ -28,9 +33,16 @@ namespace BirdLogger.Web.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-
+             return View(model);
             }
-            return View(model);
+
+            var userId = Guid.Parse(User.Identity.GetUserId());
+            var service = new NestService(userId);
+
+            service.CreateNest(model);
+
+            return RedirectToAction("Index");
+
         }
     }
 }

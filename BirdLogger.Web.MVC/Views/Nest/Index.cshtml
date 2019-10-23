@@ -1,0 +1,93 @@
+﻿@model IEnumerable<BirdLogger.Models.NestListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.NestId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LoggerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JournalId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OwnerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Site)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Materials)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Altitude)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Eggs)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Hatchlings)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CreatedUtc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ModifiedUtc)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.NestId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LoggerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.JournalId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OwnerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Site)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Materials)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Altitude)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Eggs)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Hatchlings)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CreatedUtc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ModifiedUtc)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

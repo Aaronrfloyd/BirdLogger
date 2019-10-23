@@ -57,6 +57,7 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Journal.cs" />
     <Compile Include="Logger.cs" />
+    <Compile Include="Nest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

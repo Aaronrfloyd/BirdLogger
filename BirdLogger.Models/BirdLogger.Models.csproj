@@ -62,6 +62,8 @@
     <Compile Include="LoggerDetails.cs" />
     <Compile Include="LoggerEdit.cs" />
     <Compile Include="LoggerListItem.cs" />
+    <Compile Include="NestCreate.cs" />
+    <Compile Include="NestListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

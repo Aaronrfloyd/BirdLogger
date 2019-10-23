@@ -23,12 +23,17 @@
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     @if (User.Identity.IsAuthenticated)
-                     {
-                       <li>@Html.ActionLink("Log","Index","Logger")</li>
-                     }
+                    {
+                        <li>@Html.ActionLink("Bird", "Index", "Logger")</li>
+                    }
                     @if (User.Identity.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Journal","Index","Journal")</li>
+                        <li>@Html.ActionLink("Nest", "Index", "Nest")</li>
+                    }
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Journal", "Index", "Journal")</li>
                     }
 
                     <li>@Html.ActionLink("About", "About", "Home")</li>

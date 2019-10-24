@@ -66,7 +66,7 @@ namespace BirdLogger.service
                 return query.ToArray();
             }
         }
-        public NestDetails GetNestById(int id)
+        public NestDetail GetNestById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -74,7 +74,7 @@ namespace BirdLogger.service
                                 .Nests
                                 .Single(e => e.NestId == id && e.OwnerId == _userId);
 
-                return new NestDetails
+                return new NestDetail
                 {
                     NestId = entity.NestId,
                     LoggerId = entity.LoggerId,

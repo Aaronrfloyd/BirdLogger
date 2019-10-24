@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace BirdLogger.Models
 {
-    public class NestDetails
+    public class LoggerDetails
     {
+
         public int LoggerId { get; set; }
         public Guid OwnerId { get; set; }
         public string Type { get; set; }
@@ -20,11 +21,6 @@ namespace BirdLogger.Models
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name="Modified")]
         public DateTimeOffset? ModifiedUtc { get; set; }
-        public int NestId { get; set; }
-        public string Site { get; set; }
-        public string Materials { get; set; }
-        public string Altitude { get; set; }
-        public int Eggs { get; set; }
-        public int Hatchlings { get; set; }
+        
     }
 }

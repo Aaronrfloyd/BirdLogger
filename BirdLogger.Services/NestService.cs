@@ -53,6 +53,7 @@ namespace BirdLogger.service
                                 new NestListItem
                                 {
                                     NestId = e.NestId,
+                                    OwnerId = e.OwnerId,
                                     LoggerId = e.LoggerId,
                                     Site = e.Site,
                                     Materials = e.Materials,
@@ -77,6 +78,7 @@ namespace BirdLogger.service
                 return new NestDetail
                 {
                     NestId = entity.NestId,
+                    OwnerId = entity.OwnerId,
                     LoggerId = entity.LoggerId,
                     Site = entity.Site,
                     Materials = entity.Materials,
@@ -96,6 +98,7 @@ namespace BirdLogger.service
                 var entity = ctx.Nests.Single(e => e.NestId == model.NestId && e.OwnerId == _userId);
 
                 entity.NestId = model.NestId;
+                entity.OwnerId = model.OwnerId;
                 entity.LoggerId = model.LoggerId;
                 entity.Site = model.Site;
                 entity.Altitude = model.Altitude;

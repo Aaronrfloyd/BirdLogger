@@ -62,7 +62,7 @@ namespace BirdLogger.Web.MVC.Controllers
             var model = new NestEdit
             {
                 LoggerId = detail.LoggerId,
-                OwnerId = detail.OwnerId,
+                //OwnerId = detail.OwnerId,
                 Site = detail.Site,
                 Materials = detail.Materials,
                 Altitude = detail.Altitude,

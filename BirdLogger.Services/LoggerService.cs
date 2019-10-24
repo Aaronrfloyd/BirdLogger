@@ -27,7 +27,7 @@ namespace BirdLogger.service
                 Size = model.Size,
                 Color = model.Color,
                 Activity = model.Activity,
-                CreatedUtc = DateTime.Now
+                CreatedUtc = DateTime.Now,
             };
             using (var ctx = new ApplicationDbContext())
             {
@@ -80,7 +80,7 @@ namespace BirdLogger.service
                     Color = entity.Color,
                     Activity = entity.Activity,
                     CreatedUtc = entity.CreatedUtc,
-                    ModifiedUtc = entity.ModifiedUtc
+                    ModifiedUtc = entity.ModifiedUtc,
 
                 };
             }

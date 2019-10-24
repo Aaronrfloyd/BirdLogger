@@ -45,8 +45,10 @@ namespace BirdLogger.service
                        new JournalListItem
                        {
                            JournalId = e.JournalId,
+                           LoggerId = e.LoggerId,
                            Title = e.Title,
                            CreatedUtc = e.CreatedUtc,
+                           //ModifiedUtc = e.ModifiedUtc,
                        }
                     );
                 return query.ToArray();
@@ -84,6 +86,8 @@ namespace BirdLogger.service
                 entity.Title = model.Title;
                 entity.Content = model.Content;
                 entity.CreatedUtc = DateTimeOffset.UtcNow;
+                entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
 
                 return ctx.SaveChanges() == 1;
 

@@ -22,7 +22,7 @@ namespace BirdLogger.Web.MVC.Controllers
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "If you need to contact us.";
 
             return View();
         }

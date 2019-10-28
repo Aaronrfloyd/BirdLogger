@@ -9,15 +9,15 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@if(TempData.ContainsKey("SaveResult"))
-{ 
-<div class="alert alert-success fade in" role="alert">
-    @ViewBag.SaveResult
-    <button type="button" class="close" data-dismiss="alert">
-        <span>&times;</span>
-    </button>
-    @TempData["SaveResult"]
-</div>
+@if (TempData.ContainsKey("SaveResult"))
+{
+    <div class="alert alert-success fade in" role="alert">
+        @ViewBag.SaveResult
+        <button type="button" class="close" data-dismiss="alert">
+            <span>&times;</span>
+        </button>
+        @TempData["SaveResult"]
+    </div>
 }
 <table class="table">
     <tr>
@@ -33,30 +33,31 @@
         <th>
             @Html.DisplayNameFor(model => model.CreatedUtc)
         </th>
+
         <th></th>
     </tr>
 
     @foreach (var item in Model)
-     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.JournalId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.LoggerId)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Title)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.CreatedUtc)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.JournalId }) |
-        @Html.ActionLink("Details", "Details", new { id = item.JournalId }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.JournalId })
-    </td>
-</tr>
-     }
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JournalId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LoggerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedUtc)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.JournalId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.JournalId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.JournalId })
+            </td>
+        </tr>
+    }
 
 </table>

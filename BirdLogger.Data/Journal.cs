@@ -10,13 +10,14 @@ namespace BirdLogger.Data
 {
     public class Journal
     {
-        [Key]
+        
         public int JournalId { get; set; }
 
-        [ForeignKey("LoggerVariable")]
+        [ForeignKey("LoggerJournal")]
+
         public int LoggerId { get; set; }
 
-        public virtual Logger LoggerVariable { get; set;}
+        public virtual Logger LoggerJournal { get; set;}
 
         [Required]
         public Guid OwnerId { get; set; }

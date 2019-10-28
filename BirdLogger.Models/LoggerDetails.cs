@@ -9,7 +9,7 @@ namespace BirdLogger.Models
 {
     public class LoggerDetails
     {
-
+        [Display(Name ="Bird ID")]
         public int LoggerId { get; set; }
         public Guid OwnerId { get; set; }
         public string Type { get; set; }

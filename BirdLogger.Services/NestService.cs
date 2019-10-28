@@ -78,7 +78,7 @@ namespace BirdLogger.service
                 return new NestDetail
                 {
                     NestId = entity.NestId,
-                    OwnerId = entity.OwnerId,
+                    //OwnerId = entity.OwnerId,
                     LoggerId = entity.LoggerId,
                     Site = entity.Site,
                     Materials = entity.Materials,

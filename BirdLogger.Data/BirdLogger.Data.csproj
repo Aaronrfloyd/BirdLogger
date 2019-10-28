@@ -57,29 +57,12 @@
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Journal.cs" />
     <Compile Include="Logger.cs" />
-    <Compile Include="Migrations\201910232003003_nestspls.cs" />
-    <Compile Include="Migrations\201910232003003_nestspls.Designer.cs">
-      <DependentUpon>201910232003003_nestspls.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201910232006150_test.cs" />
-    <Compile Include="Migrations\201910232006150_test.Designer.cs">
-      <DependentUpon>201910232006150_test.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Nest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201910232003003_nestspls.resx">
-      <DependentUpon>201910232003003_nestspls.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201910232006150_test.resx">
-      <DependentUpon>201910232006150_test.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

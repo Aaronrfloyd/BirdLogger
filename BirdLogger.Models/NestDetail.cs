@@ -10,6 +10,7 @@ namespace BirdLogger.Models
     public class NestDetail
     {
         public int NestId { get; set; }
+        [Display(Name="Bird ID")]
         public int LoggerId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }
@@ -18,7 +19,7 @@ namespace BirdLogger.Models
         public string Altitude { get; set; }
         public int Eggs { get; set; }
         public int Hatchlings { get; set; }
-        [Required]
+        
         [Display(Name ="Created")]
         public DateTimeOffset CreatedUtc { get; set; }
         [Display(Name ="Modified")]

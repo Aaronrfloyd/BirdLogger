@@ -10,7 +10,10 @@ namespace BirdLogger.Models
     public class NestCreate
     {
         [Required]
+        [Display(Name="Nest ID")]
         public int NestId { get; set; }
+
+        [Display(Name="Bird ID")]
         public int LoggerId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }

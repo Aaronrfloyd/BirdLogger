@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,10 @@ namespace BirdLogger.Data
     {
         
         public int NestId { get; set; }
+
+        [ForeignKey("LoggerVariable")]
         public int LoggerId { get; set; }
-        [Required]
+        public virtual Logger LoggerVariable { get; set; }
         public Guid OwnerId { get; set; }
         public string Site { get; set; }
         public string Materials { get; set; }

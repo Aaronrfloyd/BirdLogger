@@ -9,10 +9,12 @@ namespace BirdLogger.Models
 {
     public class LoggerListItem
     {
-        [Display(Name="Logger ID")]
+        [Display(Name="Bird ID")]
         public int LoggerId { get; set; }
+
         [Display(Name="Owner ID")]
         public Guid OwnerID { get; set; }
+
         [Display(Name = "What type of Bird?")]
         public string Type { get; set; }
         [Required]

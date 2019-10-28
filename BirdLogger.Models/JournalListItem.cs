@@ -11,6 +11,8 @@ namespace BirdLogger.Models
     {
         [Display(Name="Journal ID")]
         public int JournalId { get; set; }
+
+        [Display(Name ="Bird ID")]
         public int LoggerId { get; set; }
         public string Title { get; set; }
         public string Content { get; set; }

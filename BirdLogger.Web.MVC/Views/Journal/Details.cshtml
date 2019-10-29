@@ -7,7 +7,7 @@
 <h2>Details</h2>
 
 <div>
-    <h4>JournalDetail</h4>
+    <h4>Journal Detail</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -69,6 +69,7 @@
     </dl>
 </div>
 <p>
+    <a href="~/Views/Journal/Index.cshtml" input type="submit" value=" Back to List" class="btn btn-seconadry" />
     @Html.ActionLink("Edit", "Edit", new { id = Model.JournalId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

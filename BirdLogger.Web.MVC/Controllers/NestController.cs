@@ -93,7 +93,7 @@ namespace BirdLogger.Web.MVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "your nest could not be updated.");
+            ModelState.AddModelError("", "Your nest could not be updated.");
             return View(model);
         }
 

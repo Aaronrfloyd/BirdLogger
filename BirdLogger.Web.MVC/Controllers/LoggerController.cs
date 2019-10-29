@@ -39,11 +39,11 @@ namespace BirdLogger.Web.MVC.Controllers
 
             if (service.CreateLogger(model))
             {
-              TempData["SaveResult"] = "Your log was created.";
+              TempData["SaveResult"] = "The Bird was created.";
               return RedirectToAction("Index");
             };
 
-            ModelState.AddModelError("", "Log could not be created.");
+            ModelState.AddModelError("", "The Bird could not be created.");
 
             return View(model);
         }
@@ -89,11 +89,11 @@ namespace BirdLogger.Web.MVC.Controllers
 
             if (service.UpdateLogger(model))
             {
-                TempData["SaveResult"] = "Your log was updated.";
+                TempData["SaveResult"] = "Your Bird was updated.";
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "your log could not be updated.");
+            ModelState.AddModelError("", "Your Bird could not be updated.");
             return View(model);
         }
 
@@ -113,7 +113,7 @@ namespace BirdLogger.Web.MVC.Controllers
         {
             var service = CreateLoggerService();
             service.DeleteLogger(id);
-            TempData["SaveResult"] = "Your log was deleted.";
+            TempData["SaveResult"] = "Your Bird was deleted.";
             return RedirectToAction("Index");
         }
 

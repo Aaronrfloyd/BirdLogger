@@ -47,6 +47,7 @@ namespace BirdLogger.service
                            JournalId = e.JournalId,
                            LoggerId = e.LoggerId,
                            Title = e.Title,
+                           Content = e.Content,
                            CreatedUtc = e.CreatedUtc,
                            //ModifiedUtc = e.ModifiedUtc,
                        }

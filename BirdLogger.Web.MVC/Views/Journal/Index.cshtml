@@ -7,7 +7,7 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    <a href="~/Journal/Create/" class="btn btn-info">Create a Journal</a>
 </p>
 @if (TempData.ContainsKey("SaveResult"))
 {
@@ -31,7 +31,7 @@
             @Html.DisplayNameFor(model => model.Title)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.CreatedUtc)
+            @Html.DisplayNameFor(model => model.Content)
         </th>
 
         <th></th>
@@ -50,7 +50,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.CreatedUtc)
+                @Html.DisplayFor(modelItem => item.Content)
             </td>
             <td>
                 @Html.ActionLink("Edit", "Edit", new { id = item.JournalId }) |

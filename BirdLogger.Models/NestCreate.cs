@@ -9,7 +9,7 @@ namespace BirdLogger.Models
 {
     public class NestCreate
     {
-        [Required]
+       
         [Display(Name="Nest ID")]
         public int NestId { get; set; }
 

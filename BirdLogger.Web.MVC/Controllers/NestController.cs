@@ -97,6 +97,7 @@ namespace BirdLogger.Web.MVC.Controllers
             return View(model);
         }
 
+
         [ActionName("Delete")]
         public ActionResult Delete(int id)
         {

@@ -24,7 +24,7 @@ namespace BirdLogger.service
                 new Nest()
                 {
                     OwnerId = _userId,
-                    NestId = model.NestId,
+                    //NestId = model.NestId,
                     LoggerId = model.LoggerId,
                     Site = model.Site,
                     Materials = model.Materials,
@@ -98,14 +98,15 @@ namespace BirdLogger.service
                 var entity = ctx.Nests.Single(e => e.NestId == model.NestId && e.OwnerId == _userId);
 
                 entity.NestId = model.NestId;
-                entity.OwnerId = model.OwnerId;
+                //entity.OwnerId = model.OwnerId;
                 entity.LoggerId = model.LoggerId;
                 entity.Site = model.Site;
                 entity.Altitude = model.Altitude;
                 entity.Eggs = model.Eggs;
                 entity.Hatchlings = model.Hatchlings;
-                entity.CreatedUtc = DateTimeOffset.UtcNow;
+                //entity.CreatedUtc = DateTimeOffset.UtcNow;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
                 return ctx.SaveChanges() == 1;
             }
         }

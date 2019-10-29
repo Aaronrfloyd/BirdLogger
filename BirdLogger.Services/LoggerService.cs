@@ -92,12 +92,14 @@ namespace BirdLogger.service
             {
                 var entity = ctx.Loggers.Single(e => e.LoggerId == model.LoggerId && e.OwnerId == _userId);
 
+                entity.LoggerId = model.LoggerId;
                 entity.Type = model.Type;
                 entity.Location = model.Location;
                 entity.Size = model.Size;
                 entity.Color = model.Color;
                 entity.Activity = model.Activity;
                 entity.ModifiedUtc = DateTimeOffset.UtcNow;
+
                 return ctx.SaveChanges() == 1;
             }
         }

@@ -32,7 +32,7 @@ namespace BirdLogger.Web.MVC.Controllers
         public ActionResult Create(JournalCreate model)
         {
             if (!ModelState.IsValid) return View(model);
-            
+
             var service = CreateJournalService();
 
             if (service.CreateJournal(model))
@@ -78,6 +78,7 @@ namespace BirdLogger.Web.MVC.Controllers
                 ModelState.AddModelError("", "Id Mismatch");
                 return View(model);
             }
+
             var service = CreateJournalService();
 
             if (service.UpdateJournal(model))

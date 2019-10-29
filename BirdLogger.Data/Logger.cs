@@ -10,6 +10,7 @@ namespace BirdLogger.Data
     public class Logger
     {
         [Key]
+        [Display(Name =" Bird ID")]
         public int LoggerId { get; set; }
         [Required]
         public Guid OwnerId { get; set; }

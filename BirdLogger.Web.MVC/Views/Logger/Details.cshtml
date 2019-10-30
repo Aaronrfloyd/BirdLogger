@@ -83,8 +83,11 @@
         </dd>
 
     </dl>
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.LoggerId }, htmlAttributes: new { @class = "btn btn-warning" })
+
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.LoggerId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

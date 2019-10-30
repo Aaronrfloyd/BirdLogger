@@ -67,9 +67,11 @@
         </dd>
 
     </dl>
+    <div class="col-md-offset-2 col-md-10">
+        @Html.ActionLink("Edit", "Edit", new { id = Model.JournalId }, htmlAttributes: new { @class = "btn btn-warning" })
+
+    </div>
 </div>
 <p>
-    <a href="~/Views/Journal/Index.cshtml" input type="submit" value=" Back to List" class="btn btn-seconadry" />
-    @Html.ActionLink("Edit", "Edit", new { id = Model.JournalId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

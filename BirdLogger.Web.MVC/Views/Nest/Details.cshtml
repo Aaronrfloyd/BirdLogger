@@ -91,8 +91,10 @@
         </dd>
 
     </dl>
-</div>
+    <div class="col-md-offset-2 col-md-10">
+    @Html.ActionLink("Edit", "Edit", new { id = Model.NestId }, htmlAttributes: new { @class = "btn btn-warning" })
+    
+    </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.NestId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

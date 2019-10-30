@@ -1,11 +1,12 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-
-<div class="jumbotron">
-    <h1>BIRD LOGGER</h1>
-    <p class="lead">BIRD LOGGER is a free app used to track your bird watching experiences. </p>
-    <p><a href=~/BirdLogger.Web.MVC.csproj class="btn btn-info btn-lg">Download &raquo;</a></p>
+<div class="container">
+    <div class="jumbotron">
+        <link href="https://fonts.googleapis.com/css?family=Josefin+Sans|Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+        <h1>BIRD LOGGER</h1>
+        <p class="lead">BIRD LOGGER is a free application used to track your bird watching experiences. </p>
+    </div>
 </div>
 
 <div class="row">
@@ -14,9 +15,7 @@
         <div class="card-body">
             <h2 class="Log-a-bird">Log a Bird</h2>
             <p class="card-text">
-                AS gives you a powerful, patterns-based way to build dynamic websites that
-                enables a clean separation of concerns and gives you full control over markup
-                for enjoyable, agile development.
+                Record your bird watching experience by bird type, location, size, color and activity!
             </p>
             <p><a href="~/Logger/Create/" class="btn btn-info">Log a Bird</a></p>
         </div>
@@ -24,13 +23,13 @@
     <div class="col-md-4" style="width: 33%">
         <img src="~/Images/nest.png" class="img-fluid" alt="Responsive-Image">
         <h2>Log a Nest</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+        <p>Log a bird nest you have spotted too. Nest criteria includes the site, materials, altitude, eggs and hatchlings. Link the nest to a particular bird by using the Bird ID.  </p>
         <p><a class="btn btn-info" href="~/Nest/Create/">Log a Nest &raquo;</a></p>
     </div>
     <div class="col-md-4" style="width: 33%">
         <img src="~/Images/journal.png" class="img-fluid" alt="Journal">
         <h2>Journal a Bird</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
+        <p> If you would like to journal the experience use this feature to record a title and content. Also, link your journal to a bird by using the Bird ID Happy bird watching!</p>
         <p><a class="btn btn-info" href="~/Journal/Create/"> Journal &raquo;</a></p>
     </div>
 </div>

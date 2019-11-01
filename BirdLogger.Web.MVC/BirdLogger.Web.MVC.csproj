@@ -194,6 +194,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\bird.png" />
+    <Content Include="Images\birdlogo.png" />
     <Content Include="Images\journal.png" />
     <Content Include="Images\Kinderman.png" />
     <Content Include="Images\nest.png" />

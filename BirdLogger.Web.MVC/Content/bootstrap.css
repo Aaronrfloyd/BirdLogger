@@ -91,7 +91,7 @@ sub {
 }
 img {
   border: 0;
-  width: 300px;
+  width:inherit;
 }
 svg:not(:root) {
   overflow: hidden;

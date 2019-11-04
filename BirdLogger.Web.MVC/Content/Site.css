@@ -26,13 +26,23 @@ textarea {
 
 .jumbotron {
     background-image: url(Assets/Sky1.png);
-    background-size: contain;
+    background-size: cover;
     text-align: center;
     font-family: 'Josefin Sans', sans-serif;
-    font-family: 'Open Sans Condensed', sans-serif;
-
-   
+    font-family: 'Poiret One', cursive;
 }
+
+.newfont {
+    font-family: 'Poiret One', cursive;
+  
+}
+
+.container {
+    font-family: 'Poiret One', cursive;
+    font-weight:700;
+}
+
+
 
 
 

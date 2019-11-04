@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link href="https://fonts.googleapis.com/css?family=Poiret+One|Special+Elite&display=swap" rel="stylesheet">
 
 </head>
 <body>
@@ -35,8 +36,8 @@
                         <li>@Html.ActionLink("Journal", "Index", "Journal")</li>
                     }
 
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <!--@*<li>Html.ActionLink("About", "About", "Home")*@</li>-->
+                    <li>@*Html.ActionLink("Contact", "Contact", "Home")*@</li>
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -47,7 +48,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Aaron's Bird Logger Application</p>
+            <p>&copy; @DateTime.Now.Year - The Bird Logger Application</p>
         </footer>
     </div>
 
